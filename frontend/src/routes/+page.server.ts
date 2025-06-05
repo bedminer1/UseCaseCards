@@ -7,3 +7,10 @@ export const load = async () => {
         form: await superValidate(zod(formSchema))
     }
 }
+
+export const actions = {
+    default: async (event) => {
+        const form = await superValidate(event, zod(formSchema))
+        console.log(form.data)
+    }
+}

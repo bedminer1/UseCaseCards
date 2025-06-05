@@ -18,13 +18,32 @@
       <Form.Field {form} name="word">
         <Form.Control>
           {#snippet children({ props })}
-            <Form.Label>Username</Form.Label>
+            <Form.Label>Word</Form.Label>
             <Input {...props} bind:value={$formData.word} />
           {/snippet}
         </Form.Control>
-        <Form.Description>This is your public display name.</Form.Description>
         <Form.FieldErrors />
       </Form.Field>
-      <Form.Button>Submit</Form.Button>
+      <Form.Field {form} name="sentence">
+        <Form.Control>
+          {#snippet children({ props })}
+            <Form.Label>Sentence</Form.Label>
+            <Input {...props} bind:value={$formData.sentence} />
+          {/snippet}
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+      <Form.Field {form} name="context">
+        <Form.Control>
+          {#snippet children({ props })}
+            <Form.Label>Context</Form.Label>
+            <Input {...props} bind:value={$formData.context} />
+          {/snippet}
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+      <div class="flex justify-end mt-3">
+        <Form.Button>Submit</Form.Button>
+      </div>
     </form>
 </div>
